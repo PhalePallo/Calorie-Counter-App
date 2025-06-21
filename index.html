@@ -1,0 +1,83 @@
+<!-- 
+  Calorie Counter Web App
+  Description: A tool to log and calculate daily calorie intake and exercise.
+  Author: [Your Name]
+  Last Updated: [Date]
+-->
+<!DOCTYPE html> <!-- Defines the document type as HTML5 -->
+<html lang="en"> <!-- Sets the language of the document to English -->
+  <head>
+    <meta charset="utf-8" /> <!-- Specifies character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes layout responsive -->
+    <link rel="stylesheet" href="styles.css" /> <!-- Links the external CSS stylesheet -->
+    <title>Calorie Counter</title> <!-- Sets the title of the page shown on the browser tab -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Loads Chart.js from CDN for graph rendering -->
+  </head>
+  <body>
+    <main> <!-- Main content of the application -->
+      <h1>Calorie Counter</h1> <!-- App title -->
+      <button id="toggle-theme">Toggle Theme</button> <!-- Button to toggle between light and dark mode -->
+      <input type="date" id="log-date" /> <!-- Date picker for selecting log entry date -->
+      <div class="container"> <!-- Wrapper for form and outputs -->
+        <form id="calorie-counter"> <!-- Calorie input form -->
+          <label for="budget">Budget</label> <!-- Label for budget input -->
+          <input
+            type="number"
+            min="0"
+            id="budget"
+            placeholder="Daily calorie budget"
+            required
+          /> <!-- Input for setting calorie budget -->
+
+          <!-- Meal and activity input sections -->
+          <fieldset id="breakfast">
+            <legend>Breakfast</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="lunch">
+            <legend>Lunch</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="dinner">
+            <legend>Dinner</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="snacks">
+            <legend>Snacks</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="exercise">
+            <legend>Exercise</legend>
+            <div class="input-container"></div>
+          </fieldset>
+
+          <!-- Controls to add new entries -->
+          <div class="controls">
+            <span>
+              <label for="entry-dropdown">Add food or exercise:</label>
+              <select id="entry-dropdown" name="options"> <!-- Dropdown to select entry type -->
+                <option value="breakfast" selected>Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snacks">Snacks</option>
+                <option value="exercise">Exercise</option>
+              </select>
+              <button type="button" id="add-entry">Add Entry</button> <!-- Button to trigger entry addition -->
+            </span>
+          </div>
+
+          <!-- Buttons to calculate or clear form -->
+          <div>
+            <button type="submit">Calculate Remaining Calories</button> <!-- Submits form to calculate -->
+            <button type="button" id="clear">Clear</button> <!-- Clears all input fields -->
+          </div>
+        </form>
+
+        <!-- Output section and chart canvas -->
+        <div id="output" class="output hide"></div> <!-- Shows result of calculation -->
+        <canvas id="calorieChart" width="400" height="200"></canvas> <!-- Displays bar chart of data -->
+      </div>
+    </main>
+    <script src="script.js"></script> <!-- Links to JavaScript logic -->
+  </body>
+</html>

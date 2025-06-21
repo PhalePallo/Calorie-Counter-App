@@ -1,0 +1,138 @@
+/* 
+  styles.css for Calorie Counter App
+  Description: Handles layout, themes, and component styles.
+  Author: [Your Name]
+  Last Updated: [Date]
+*/
+
+:root {
+  /* Light mode variables */
+  --bg: aliceblue; /* Default background */
+  --text: black; /* Default text color */
+  --card-bg: white; /* Card and input background */
+  --light-yellow: #fecc4c; /* Button base color */
+  --dark-yellow: #feac32; /* Button border color */
+  --light-pink: #ffadad; /* Surplus text color */
+  --dark-red: #850000;
+  --light-green: #acd157; /* Deficit text color */
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Card shadow */
+}
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif; /* Font stack */
+  font-size: 18px;
+  background-color: var(--bg); /* Background set via variable */
+  color: var(--text); /* Text color set via variable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth theme switching */
+}
+
+.dark-mode {
+  /* Dark mode overrides */
+  --bg: #1b1b32; /* Dark background */
+  --text: #f5f6f7; /* Light text for contrast */
+  --card-bg: #2c2c4c; /* Card background in dark mode */
+}
+
+h1 {
+  text-align: center; /* Center the heading */
+  margin-top: 10px;
+}
+
+.container {
+  width: 90%;
+  max-width: 680px; /* Maximum content width */
+  margin: 0 auto; /* Center container */
+}
+
+fieldset {
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+  padding: 10px; /* Internal spacing */
+  background-color: var(--card-bg); /* Background set via theme */
+  box-shadow: var(--shadow); /* Drop shadow */
+  margin-bottom: 10px;
+  transition: background-color 0.3s; /* Smooth on theme switch */
+}
+
+legend {
+  font-weight: bold; /* Emphasize section titles */
+  color: var(--text);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+}
+
+label,
+legend {
+  font-weight: bold; /* Consistent bold labels */
+}
+
+button {
+  cursor: pointer; /* Pointer cursor on hover */
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-yellow);
+  padding: 5px 10px;
+  border-radius: 4px; /* Rounded buttons */
+}
+
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--text);
+  background-color: var(--card-bg); /* Theme-aware background */
+  border: 1px solid #ccc; /* Subtle border */
+}
+
+.output {
+  border: 2px solid var(--text);
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
+}
+
+.output:not(.hide) {
+  opacity: 1; /* Show when visible */
+}
+
+.output span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.surplus {
+  color: var(--light-pink); /* Color for calorie surplus */
+}
+
+.deficit {
+  color: var(--light-green); /* Color for calorie deficit */
+}
+
+.hide {
+  display: none; /* Utility class to hide elements */
+}
+
+#toggle-theme {
+  margin: 10px auto;
+  display: block; /* Center the toggle button */
+}
+
+#log-date {
+  display: block; /* Date picker alignment */
+  margin: 10px auto;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+canvas {
+  margin: 20px auto;
+  display: block; /* Center the chart */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow); /* Apply card shadow */
+}
