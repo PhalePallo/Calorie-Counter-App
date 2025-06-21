@@ -113,7 +113,7 @@ const html = `
 1. Download or clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/calorie-counter.git
+   git clone https://github.com/PhalePallo/Calorie-Counter-App.git
    ```
 
 2. Open the folder in your editor or file browser
